@@ -1,0 +1,379 @@
+/*样式重置*/
+
+/* 设置滚动条的样式 */
+::-webkit-scrollbar {
+    width: 12px;
+}
+
+/* 滚动槽 */
+::-webkit-scrollbar-track {
+    -webkit-box-shadow: inset 0 0 6px rgba(0,0,0,0.3);
+    border-radius: 10px;
+}
+
+/* 滚动条滑块 */
+::-webkit-scrollbar-thumb {
+    border-radius: 10px;
+    background: rgba(0,0,0,0.1);
+    -webkit-box-shadow: inset 0 0 6px rgba(0,0,0,0.5);
+}
+::-webkit-scrollbar-thumb:window-inactive {
+    background: rgba(255,0,0,0.4);
+}
+
+body {
+    margin: 0;
+    padding: 0;
+}
+
+p {
+    margin: 5px 0;
+}
+
+a {
+    text-decoration: none;
+}
+
+ul,
+li {
+    padding: 0;
+}
+
+li {
+    list-style: none;
+}
+
+
+/*公共样式*/
+
+.u-clearfix:before,
+.u-clearfix:after {
+    content: "";
+    display: table;
+}
+
+.u-clearfix:after {
+    clear: both;
+}
+
+
+/*其它样式*/
+
+body {
+    background-color: #d2d5d6;
+}
+
+#l-music-player {
+    width: 640px;
+    min-width: 320px;
+    margin: 50px auto;
+    background-color: #eef1f2;
+    font-family: "Microsoft Yahei", sans-serif;
+    box-shadow: 0 0 6px 2px #aaa;
+    border-radius: 5px;
+}
+
+.l-panel {
+    height: 250px;
+    background: linear-gradient(to right, rgba(0, 0, 0, 1), rgba(0, 0, 0, 0.4)), url(../image/bg-panel.jpg) no-repeat;
+    background-size: cover;
+    overflow: hidden;
+}
+
+.c-poster {
+    float: left;
+    width: 240px;
+}
+
+.c-poster__img {
+    width: 150px;
+    height: 150px;
+    margin-top: 20px;
+    border: solid 7px #49D292;
+    border-radius: 50%;
+    background: url(../image/poster.jpg) no-repeat;
+    background-size: cover;
+    animation: rotate-poster-image 10s linear infinite paused;
+}
+/*头像旋转*/
+@keyframes rotate-poster-image {
+    from {
+        transform: rotateZ(0);
+    }
+    to {
+        transform: rotateZ(360deg);
+    }
+}
+
+.c-poster__label {
+    margin-left: 20px;
+}
+
+.c-poster__icon {
+    display: inline-block;
+    margin: 30px 10px;
+    font-size: 18px;
+    cursor: pointer;
+    color: #fff;
+}
+
+.c-lyric {
+    position: relative;
+    display: none;
+    color: #eee;
+    margin-left: 260px;
+    text-align: center;
+    height: 100%;
+    overflow: hidden;
+}
+
+.c-lyric__list {
+    position: absolute;
+    top: 100px;
+    right: 0px;
+    font-size: 14px;
+    width: 100%;
+}
+
+.c-lyric__item--active {
+    color: #49D292;
+    /*font-weight: 900;*/
+    font-size: 16px;
+}
+
+.l-panel,
+.l-msg,
+.l-progress,
+.l-handle {
+    padding: 10px 40px;
+}
+
+.c-msg__title {
+    font-weight: bold;
+    font-size: 26px;
+    line-height: 35px;
+    overflow: hidden;
+    white-space: nowrap;
+    text-overflow: ellipsis;
+}
+
+
+
+.c-msg__channels-list {
+    font-size: 16px;
+}
+
+.c-msg__artist {
+    font-weight: bold;
+    font-size: 18px;
+    line-height: 24px;
+    overflow: hidden;
+    white-space: nowrap;
+    text-overflow: ellipsis;
+}
+
+.c-progress{
+    display: flex;
+    align-items: center;
+}
+
+.c-progress__current-time,
+.c-progress__total-time{
+    flex: 0 0 auto;
+}
+
+.c-progress__basebar{
+    flex: 1 1 auto;
+}
+
+.c-progress__basebar {
+    height: 6px;
+    background-color: #414141;
+    position: relative;
+    margin: 0 10px;
+    border-radius: 2px;
+    cursor: pointer;
+    vertical-align: middle;
+}
+
+.c-progress__curbar {
+    height: 6px;
+    position: absolute;
+    top: 0;
+    left: 0;
+    background-color: #49D292;
+    border-radius: 2px;
+}
+
+.l-handle {
+    padding-bottom: 40px;
+}
+
+.c-control {
+    float: left;
+}
+
+.c-control__play-pause,
+.c-control__next {
+    cursor: pointer;
+    vertical-align: middle;
+}
+
+.c-control__play-pause {
+    margin-right: 25px;
+    font-size: 45px;
+    margin-left: -8px;
+}
+
+.c-control__next {
+    font-size: 25px;
+}
+
+.c-setting {
+    float: right;
+    line-height: 45px;
+    position: relative;
+}
+
+.c-setting__volume{
+    font-size: 18px;
+    cursor: pointer;
+    display: inline-block;
+}
+
+.c-setting__team{
+    display: inline-block;
+}
+
+.c-setting__basic-volume,
+.c-setting__lyric,
+.c-setting__channel {
+    font-size: 18px;
+    margin-left: 20px;
+    cursor: pointer;
+    display: inline-block;
+    line-height: 45px;
+}
+
+.c-setting__lyric--active{
+    color: #49D292;
+}
+
+.c-setting__basic-volume {
+    width: 120px;
+    height: 4px;
+    background-color: #414141;
+    position: relative;
+    margin: 0 10px;
+    border-radius: 2px;
+    cursor: pointer;
+    vertical-align: middle;
+    margin-top: -5px;
+}
+
+.c-setting__cur-volume {
+    height: 4px;
+    position: absolute;
+    top: 0;
+    left: 0;
+    background-color: #49D292;
+    border-radius: 2px;
+}
+
+.c-channels-list {
+    position: absolute;
+    margin: 0px;
+    padding: 6px 5px;
+    background-color: #eaeced;
+    border: solid 1px #999;
+    border-radius: 4px;
+    font-size: 14px;
+    top: -340px;
+    right: 20px;
+    height: 350px;
+    overflow: auto;
+    display: none;
+    ::-webkit-scrollbar {width: 12px;};
+    ::-webkit-scrollbar-thumb:window-inactive {
+    background: rgba(255,0,0,0.4);
+}
+}
+
+.c-channels-list__item {
+    line-height: 1.5;
+    cursor: pointer;
+}
+
+.c-channels-list__item:hover,
+.c-channels-list__item--active {
+    /*border-left: solid 2px #49D292;*/
+    margin-left: -4px;
+    /*background: #49D292;*/
+    box-shadow: inset 0 0 6px rgba(0,0,0,0.3);
+    border-radius: 6px;
+    padding-left: 4px;
+}
+
+@media screen and (max-width:767px) {
+    #l-music-player{
+        width: 100vw;
+        height: 100vh;
+        margin: 0;
+        min-height: 572px;
+    }
+
+    .l-panel,
+    .l-msg,
+    .l-progress,
+    .l-handle {
+        padding: 10px 20px;
+    }
+
+    .c-poster{
+        float: none;
+        width: 100%;
+    }
+
+    .c-poster__img,
+    .c-poster__label{
+        margin-left: auto;
+        margin-right: auto;
+    }
+
+    .c-poster__label{
+        text-align: center;
+    }
+
+    .c-poster{
+        float: none;
+    }
+
+    .c-lyric{
+        margin-left: 0;
+    }  
+
+    .c-control{
+        float: none;
+        text-align: center;
+    }
+
+    .c-setting {
+        float: none;
+        margin-top: 10px;
+    }
+
+    .c-setting__team{
+        float: right;
+    }
+
+    .c-channels-list{
+        position: fixed;
+        top: inherit;
+        right: inherit;
+        bottom: 0;
+        left: 0;
+        width: 100vw;
+        height: 250px;
+        box-sizing: border-box;
+    }
+}

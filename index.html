@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="referrer" content="never">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0, user-scalable=no">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1"/>
+    <meta name="apple-mobile-web-app-title" content="FM音乐">
+    <meta name="apple-mobile-web-app-capable" content="yes"/>
+    <meta name="apple-mobile-web-app-status-bar-style" content="black"/>
+    <meta name="format-detection" content="telphone=no, email=no"/>
+    <title>音乐播放器</title>
+    <link rel="stylesheet" href="css/index.css">
+    <link rel="stylesheet" type="text/css" href="css/iconfont.css">
+</head>
+
+<body>
+    <div id="l-music-player">
+        <audio id="music"></audio>
+        <!-- 上方面板 -->
+        <div class="l-panel u-clearfix">
+            <!-- 海报区域 -->
+            <div class="c-poster">
+                <!-- 歌手头像 -->
+                <div class="c-poster__img"></div>
+                <!-- 功能图标 》》》-收藏-点赞-分享-->
+                <div class="c-poster__label">
+                    <span class="c-poster__icon c-poster__icon-like icon-heart"></span>
+                    <span class="c-poster__icon c-poster__icon-collect icon-star"></span>
+                    <a class="c-poster__icon c-poster__icon-share icon-open" href="http://service.weibo.com/share/share.php?title=#_loginLayer_1466697157538" target="_blank"></a>
+                </div>
+            </div>
+            <!-- 歌词 -->
+            <div class="c-lyric">
+                <ul class="c-lyric__list"></ul>
+            </div>
+        </div>
+        <!-- 下方面板 -->
+        <div class="l-msg">
+            <div class="c-msg">
+                <p class="c-msg__title">歌曲</p>
+                <p class="c-msg__artist">歌手</p>
+                <p class="c-msg__channel">频道</p>
+            </div>
+        </div>
+        <!-- 歌曲进度条 -->
+        <div class="l-progress">
+            <div class="c-progress u-clearfix">
+                <p class="c-progress__current-time">0 : 00</p>
+                <div class="c-progress__basebar">
+                    <div class="c-progress__curbar"></div>
+                </div>
+                <p class="c-progress__total-time">0 : 00</p>
+            </div>
+        </div>
+        <!-- 歌曲控制按钮组 -->
+        <div class="l-handle u-clearfix">
+            <div class="c-control">
+                <!-- 暂停>>>>下一首 -->
+                <span class="c-control__play-pause icon-play"></span>
+                <span class="c-control__next icon-skip-forward"></span>
+            </div>
+            <div class="c-setting">
+                <!-- 音量按钮 -->
+                <span class="c-setting__volume icon-volume"></span>
+                <div class="c-setting__basic-volume">
+                    <div class="c-setting__cur-volume"></div>
+                </div
+                <!-- 歌词 、频道列表按钮 --->
+                <div class="c-setting__team">
+                    <span class="c-setting__lyric icon-paper"></span>
+                    <span class="c-setting__channel icon-menu"></span>
+                </div>
+                <!-- 音乐频道列表 -->
+                <ul class="c-channels-list"></ul>
+            </div>
+        </div>
+    </div>
+    <script src="js/asset/jquery.min.js"></script>
+    <script src="js/asset/fastclick.js"></script>
+    <script src="js/music-player.js"></script>
+    <script>
+        $(function() {
+            FastClick.attach(document.body);
+            
+        });
+        new MusicPlayer($("#l-music-player"));
+    </script>
+</body>
+
+</html>
